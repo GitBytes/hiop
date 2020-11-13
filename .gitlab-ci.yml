@@ -20,7 +20,7 @@
       # testing
       set -xv
       TESTDIR="$PROJWORK/csc359/ci"
-      cp -a * $TESTDIR/
+      cp -R ./* $TESTDIR/
       cd $TESTDIR
       MY_CLUSTER="ascent" ./BUILD.sh --build-only || exit 1
 
@@ -34,7 +34,7 @@
       set -xv
       export WORKDIR="$HOME/gitlab/$CI_JOB_ID/"
       mkdir -p "$WORKDIR"
-      cp -a ./ "$WORKDIR"
+      cp -R ./* "$WORKDIR"
       cd "$WORKDIR"
       touch output
       tail -f output &
